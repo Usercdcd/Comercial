@@ -20,7 +20,7 @@ bodegas = {
 
 @app.route('/')
 def index():
-    # Renderiza la plantilla index.html con los datos de categorías, proveedores y bodegas
+    # Renderiza la plantilla index.html con los datos de categorías, proveedores y  las bodegas
     return render_template('index.html', categorias=categorias, proveedores=proveedores, bodegas=bodegas)
 
 @app.route('/agregar_producto_categoria', methods=['POST'])
