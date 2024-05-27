@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Entidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        select,
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Entidades</h1>
+
+    <h2>Agregar Producto a Categoría</h2>
+    <form action="{{ url_for('agregar_producto_categoria') }}" method="post">
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" id="categoria">
+            {% for categoria in categorias %}
+                <option value="{{ categoria }}">{{ categoria }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Eliminar Producto de Categoría</h2>
+    <form action="{{ url_for('eliminar_producto_categoria') }}" method="post">
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" id="categoria">
+            {% for categoria in categorias %}
+                <option value="{{ categoria }}">{{ categoria }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <button type="submit">Eliminar</button>
+    </form>
+
+    <h2>Agregar Producto a Proveedor</h2>
+    <form action="{{ url_for('agregar_producto_proveedor') }}" method="post">
+        <label for="proveedor">Proveedor:</label>
+        <select name="proveedor" id="proveedor">
+            {% for proveedor in proveedores %}
+                <option value="{{ proveedor }}">{{ proveedor }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Eliminar Producto de Proveedor</h2>
+    <form action="{{ url_for('eliminar_producto_proveedor') }}" method="post">
+        <label for="proveedor">Proveedor:</label>
+        <select name="proveedor" id="proveedor">
+            {% for proveedor in proveedores %}
+                <option value="{{ proveedor }}">{{ proveedor }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <button type="submit">Eliminar</button>
+    </form>
+
+    <h2>Agregar Producto a Bodega</h2>
+    <form action="{{ url_for('agregar_producto_bodega') }}" method="post">
+        <label for="bodega">Bodega:</label>
+        <select name="bodega" id="bodega">
+            {% for bodega in bodegas %}
+                <option value="{{ bodega }}">{{ bodega }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad">
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Retirar Producto de Bodega</h2>
+    <form action="{{ url_for('retirar_producto_bodega') }}" method="post">
+        <label for="bodega">Bodega:</label>
+        <select name="bodega" id="bodega">
+            {% for bodega in bodegas %}
+                <option value="{{ bodega }}">{{ bodega }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad">
+        <button type="submit">Retirar</button>
+    </form>
+
+    <h2>Consultar Disponibilidad de Producto en Bodega</h2>
+    <form action="{{ url_for('consultar_disponibilidad') }}" method="get">
+        <label for="bodega">Bodega:</label>
+        <select name="bodega" id="bodega">
+            {% for bodega in bodegas %}
+                <option value="{{ bodega }}">{{ bodega }}</option>
+            {% endfor %}
+        </select>
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto">
+        <button type="submit">Consultar</button>
+    </form>
+</body>
+</html>
