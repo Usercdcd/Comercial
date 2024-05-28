@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas y Reportes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <h1 class="my-4">Consultas y Reportes</h1>
+    <div class="mb-3">
+        <a href="/agregar_producto" class="btn btn-primary mr-2"><i class="fas fa-plus"></i> Agregar Producto</a>
+        <a href="/agregar_categoria" class="btn btn-primary mr-2"><i class="fas fa-plus"></i> Agregar Categoría</a>
+        <a href="/agregar_proveedor" class="btn btn-primary mr-2"><i class="fas fa-plus"></i> Agregar Proveedor</a>
+        <a href="/agregar_bodega" class="btn btn-primary mr-2"><i class="fas fa-plus"></i> Agregar Bodega</a>
+    </div>
+    <h2>Productos</h2>
+    <ul class="list-group mb-3">
+        {% for producto in productos %}
+        <li class="list-group-item"><a href="/producto/{{ producto.id }}">{{ producto.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Categorías</h2>
+    <ul class="list-group mb-3">
+        {% for categoria in categorias %}
+        <li class="list-group-item"><a href="/categoria/{{ categoria.id }}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Proveedores</h2>
+    <ul class="list-group mb-3">
+        {% for proveedor in proveedores %}
+        <li class="list-group-item"><a href="/proveedor/{{ proveedor.id }}">{{ proveedor.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Bodegas</h2>
+    <ul class="list-group mb-3">
+        {% for bodega in bodegas %}
+        <li class="list-group-item"><a href="/bodega/{{ bodega.id }}">{{ bodega.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Reportes</h2>
+    <a href="/reportes" class="btn btn-secondary">Ver Reportes</a>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
