@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <div class="table-container"> <!-- Contenedor de la tabla -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td>
+                        <form action="{{ url_for('agregar_stock', id_producto=loop.index0) }}" method="POST">
+                            <input type="number" name="cantidad" placeholder="Cantidad">
+                            <button type="submit">Agregar Stock</button>
+                        </form>
+                        <form action="{{ url_for('retirar_stock', id_producto=loop.index0) }}" method="POST">
+                            <input type="number" name="cantidad" placeholder="Cantidad">
+                            <button type="submit">Retirar Stock</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <a href="{{ url_for('agregar_producto') }}">Agregar Producto</a>
+    <a href="{{ url_for('valor_total_stock') }}">Valor Total del Stock</a>
+</body>
+</html>
