@@ -92,13 +92,17 @@ def registro_bodega():
     else:
         return render_template('registro_bodega.html')
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 999f6df (incluyendoo la opcion todos los registros)
+=======
+>>>>>>> 535658c3a0c38ad3ecc4625b79d7aa930bc7c08d
 
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
@@ -112,3 +116,5 @@ if __name__ == '__main__':
        app.run(port=5000, debug=True)
 >>>>>>> d4cb920 (incluyendo la opcion todos los registross)
 >>>>>>> 999f6df (incluyendoo la opcion todos los registros)
+=======
+>>>>>>> 535658c3a0c38ad3ecc4625b79d7aa930bc7c08d
