@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Registros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Productos Registrados:</h2>
+            <ul>
+                {% for producto in productos %}
+                <li>
+                    <span class="label">Nombre:</span> {{ producto.nombre }}<br>
+                    <span class="label">Descripción:</span> {{ producto.descripcion }}<br>
+                    <span class="label">Precio:</span> {{ producto.precio }}<br>
+                    <span class="label">Stock Inicial:</span> {{ producto.stock_inicial }}<br>
+                    <span class="label">Categoría:</span> {{ producto.categoria }}<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Categorías Registradas:</h2>
+            <ul>
+                {% for categoria in categorias %}
+                <li>
+                    <span class="label">Nombre:</span> {{ categoria.nombre }}<br>
+                    <span class="label">Descripción:</span> {{ categoria.descripcion }}<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Proveedores Registrados:</h2>
+            <ul>
+                {% for proveedor in proveedores %}
+                <li>
+                    <span class="label">Nombre:</span> {{ proveedor.nombre }}<br>
+                    <span class="label">Dirección:</span> {{ proveedor.direccion }}<br>
+                    <span class="label">Teléfono:</span> {{ proveedor.telefono }}<br>
+                    <span class="label">Productos Suministrados:</span> {{ proveedor.productos_suministrados }}<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Bodegas Registradas:</h2>
+            <ul>
+                {% for bodega in bodegas %}
+                <li>
+                    <span class="label">Nombre:</span> {{ bodega.nombre }}<br>
+                    <span class="label">Ubicación:</span> {{ bodega.ubicacion }}<br>
+                    <span class="label">Capacidad Máxima:</span> {{ bodega.capacidad_maxima }}<br>
+                    <span class="label">Productos Almacenados:</span> {{ bodega.productos_almacenados }}<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Para centrar el contenido */
+}
+
+.title {
+    color: #ff6600; /* Color naranja para el título */
+    margin-bottom: 30px; /* Añadir espacio debajo del título */
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px; /* Espacio entre botones */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+}
+
+.btn-primary:hover {
+    background-color: #ff4500;
+}
