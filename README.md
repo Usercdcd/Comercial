@@ -1,4 +1,7 @@
 # Sistema de Gestión de Inventario
+## INTEGRANTES 
+Miguel aponte (lider)
+Cristian morales (colaborador) 
 ## Descripcion
 
 ¡Hola! Soy Cristian Morales y junto con mi compañero Miguel Aponte estamos desarrollando un sistema de gestión de inventario. Este proyecto tiene como objetivo ayudar a las empresas a administrar de manera eficiente su inventario de productos.
