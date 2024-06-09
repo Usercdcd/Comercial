@@ -2,6 +2,11 @@
 ## INTEGRANTES 
 Miguel aponte (lider)
 Cristian morales (colaborador) 
+
+## Ejecucion del codigo
+1. Abrir desde Vscode
+2. Cada categoria se debe ejecutar desde main.py
+
 ## Descripcion
 
 ¡Hola! Soy Cristian Morales y junto con mi compañero Miguel Aponte estamos desarrollando un sistema de gestión de inventario. Este proyecto tiene como objetivo ayudar a las empresas a administrar de manera eficiente su inventario de productos.
